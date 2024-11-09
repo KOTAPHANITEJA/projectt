@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-lmy96p7b1=c*b0=!$@x*-#57pq9nn_-9dk1!im%aqdk7#uwr=6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kotaphaniteja.onrender.com','127.0.0.1']
+ALLOWED_HOSTS = ['onlinebookingwebsite.onrender.com','127.0.0.1']
 
 
 # Application definition
