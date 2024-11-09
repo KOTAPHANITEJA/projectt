@@ -17,7 +17,8 @@ def home(request):
     return render(request,'home.html',{'name':'Passengers'})
 
 def hotel_list(request):
-    df = pd.read_csv("booking\hotels.csv")
+   file_path = os.path.join(settings.BASE_DIR, 'booking', 'hotels.csv')
+    df = pd.read_csv(file_path)
     return render(request, 'hotel_list.html', {'hotels_table': df.to_html()})
 
 def movie_list(request):
@@ -31,7 +32,8 @@ def movie_list(request):
     return render(request, 'movie_list.html',{'movies_table':df.to_html()})
 
 def restaurant_list(request):
-    df=pd.read_csv("booking\dining.csv")
+   file_path = os.path.join(settings.BASE_DIR, 'booking', 'dining.csv')
+    df = pd.read_csv(file_path)
     return render(request, 'restaurant_list.html',{'restaurants_table':df.to_html()})
 
 def registerPage(request):
