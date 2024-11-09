@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurants</title>
+    <style>
+        body {
+            background-image: url("{% static 'images/restaurant_background.jpg' %}"); /* Replace with your image URL */
+            background-size: cover; /* Cover the entire viewport */
+            color: white; /* Text color */
+            font-family: 'Arial', sans-serif; /* Font style */
+            text-align: center; /* Center align text */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        h1 {
+            font-size: 3em; /* Size of the main heading */
+            margin-top: 20px; /* Space above the heading */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for better readability */
+        }
+
+        p {
+            font-size: 1.5em; /* Size of paragraph text */
+            margin: 20px 0; /* Space above and below paragraph */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Shadow for better readability */
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background for form */
+            padding: 30px; /* Padding inside form */
+            border-radius: 15px; /* More rounded corners */
+            display: inline-block; /* Fit the form to its content */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Shadow around the form */
+            transition: transform 0.3s; /* Smooth transform on hover */
+        }
+
+        form:hover {
+            transform: scale(1.02); /* Slightly enlarge form on hover */
+        }
+
+        .btn {
+            background-color: #ff7f50; /* Button color */
+            color: white; /* Button text color */
+            border: none; /* Remove border */
+            padding: 12px 25px; /* Padding for button */
+            font-size: 1.2em; /* Font size */
+            border-radius: 8px; /* Rounded corners for button */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background color and transform */
+        }
+
+        .btn:hover {
+            background-color: #ff6347; /* Darker color on hover */
+            transform: scale(1.05); /* Slightly enlarge button on hover */
+        }
+
+        /* Additional styling for the restaurant table */
+        table {
+            width: 100%; /* Full width for table */
+            margin-top: 20px; /* Space above the table */
+            border-collapse: collapse; /* Remove space between table cells */
+        }
+
+        th, td {
+            padding: 15px; /* Padding for table cells */
+            border: 1px solid rgba(255, 255, 255, 0.5); /* Light border for table cells */
+            text-align: left; /* Align text to the left */
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.3); /* Light background for headers */
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.1); /* Zebra stripe effect for even rows */
+        }
+    </style>
+</head>
+<body>
+    <form action="{% url 'restaurant_list' %}" method="post">
+        {% csrf_token %}
+        <h1>Restaurant Listings</h1>
+        <p>Here you can book tables at restaurants.</p>
+        {{ restaurants_table | safe }}
+       
+        <a href="{% url 'book_restaurant' %}"><button type="button">Book Restaurant</button></a><br>
+        
+    </form>
+</body>
+</html>

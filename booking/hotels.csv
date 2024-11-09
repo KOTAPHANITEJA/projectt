@@ -1,0 +1,17 @@
+hotel_id,hotel_name,hotel_area,category
+01,Taj Falaknuma Palace,Falaknuma,Luxury
+02,ITC Kohenur,Madhapur,Luxury
+03,Trident Hyderabad,Madhapur,Luxury
+04,The Westin Hyderabad Mindspace,HITEC City,Luxury
+05,Hyatt Hyderabad Gachibowli,Gachibowli,Luxury
+06,Novotel Hyderabad Convention Centre,HITEC City,Luxury
+07,Vivanta Hyderabad Begumpet,Begumpet,Luxury
+08,Radisson Blu Plaza Hotel,Banjara Hills,Luxury
+09,Park Hyatt Hyderabad,Banjara Hills,Luxury
+10,Mercure  Hyderabad KCP,Somajiguda,Mid-Range
+11,Courtyard by Marriott Hyderabad,Gachibowli,Mid-Range
+12,Lemon Tree Hotel Hyderabad,HITEC,Mid-Range
+13,Treebo Trend,Multiple locations,Budget-Friendly
+14,FabHotel,Multiple locations,Budget-Friendly
+15,Red Fox hotel,Chaderghat,Budget-Friendly
+16,Hotel Arihant,Abids,Budget-Friendly

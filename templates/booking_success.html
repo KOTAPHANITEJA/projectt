@@ -1,0 +1,53 @@
+
+{% load static %}
+
+
+<style>
+    body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+    }
+
+    h1 {
+        text-align: center;
+        color: #2e8b57;
+        font-size: 28px;
+        margin-top: 50px;
+    }
+
+    p {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 500px;
+        margin: 20px auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-size: 16px;
+        color: #333;
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 16px;
+        color: #ffffff;
+        background-color: #4CAF50;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 5px;
+        max-width: 200px;
+        margin: 20px auto;
+    }
+
+    a:hover {
+        background-color: #45a049;
+    }
+</style>
+<h1>Booking Success!</h1>
+<p>Your booking for the movie "{{ movie_name }}" was successful!<br>
+    Theatre: "{{ theatre_name }}"<br>
+    Showtime: {{ show_time }}<br>
+    Number of tickets: {{ num_tickets }}<br>
+</p>
+<a href="{% url 'home' %}">Go back to home</a>
