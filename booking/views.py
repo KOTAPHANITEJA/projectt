@@ -5,6 +5,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import cache_control
+import os
+from django.conf import settings
 from .forms import CreateUserForm #,BookingForm
 #from .models import Hotel, Booking
 import csv
@@ -19,7 +21,13 @@ def hotel_list(request):
     return render(request, 'hotel_list.html', {'hotels_table': df.to_html()})
 
 def movie_list(request):
-    df= pd.read_csv("booking\mov.csv")
+    # Construct the full path to the CSV file
+    file_path = os.path.join(settings.BASE_DIR, 'booking', 'mov.csv')
+    
+    # Now use the full path to read the CSV
+    df = pd.read_csv(file_path)
+    
+    # Continue with your view logic...
     return render(request, 'movie_list.html',{'movies_table':df.to_html()})
 
 def restaurant_list(request):
